@@ -1,10 +1,7 @@
-import { ReactComponent } from "*.svg";
-
-
 function DateComponent() {
     return (
         <div>
-            Hello
+            Main
         </div>
     );
 }

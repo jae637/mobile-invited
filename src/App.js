@@ -1,10 +1,14 @@
-import DateComponent from './component/DateComponent'
+import { Container } from 'react-bootstrap';
+import DateContents from './component/DateContents'
+import MainContents from './component/MainContents'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <DateComponent />
-    </div>
+    <Container>
+      <DateContents />
+      <MainContents />
+    </Container>
   );
 }
 
