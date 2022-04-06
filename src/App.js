@@ -1,12 +1,14 @@
 import { Container } from 'react-bootstrap';
-import DateContents from './component/DateContents'
 import MainContents from './component/MainContents'
+import WeddingCards from './component/WeddingCards'
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Container>
-      <DateContents />
+      <WeddingCards />
       <MainContents />
     </Container>
   );
