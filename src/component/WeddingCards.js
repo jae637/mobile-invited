@@ -23,7 +23,7 @@ function WeddingCards() {
     return (
         <Carousel variant="dark">
             {date.map(d =>
-                <Carousel.Item>
+                <Carousel.Item key={d}>
                     <img
                         className="d-block w-100"
                         src={d}
