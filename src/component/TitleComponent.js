@@ -1,7 +1,5 @@
 import React from 'react'
 
-// import FirebaseApi from '../api/FirebaseApi';
-import { Carousel } from 'react-bootstrap'
 import titleImage from '../res/title.jpg';
 
 function TitleComponent() {

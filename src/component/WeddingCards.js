@@ -4,7 +4,7 @@ import FirebaseApi from '../api/FirebaseApi';
 import { Carousel } from 'react-bootstrap'
 
 function WeddingCards() {
-    const [date, setDate] = React.useState([]);
+    const [cardItem, setCardItem] = React.useState([]);
 
     React.useEffect(() => {
         async function dataPush() {
@@ -16,16 +16,16 @@ function WeddingCards() {
             return data;
         }
         dataPush().then(d => {
-            setDate(d);
+            setCardItem(d);
         });
     }, [])
 
     return (
         <>
             {
-                date.length > 0 ?
+                cardItem.length > 0 ?
                     <Carousel variant="dark">
-                        {date.map(d =>
+                        {cardItem.map(d =>
                             <Carousel.Item key={d}>
                                 <img
                                     className="d-block w-100"
