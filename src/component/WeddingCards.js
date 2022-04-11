@@ -21,17 +21,22 @@ function WeddingCards() {
     }, [])
 
     return (
-        <Carousel variant="dark">
-            {date.map(d =>
-                <Carousel.Item key={d}>
-                    <img
-                        className="d-block w-100"
-                        src={d}
-                        alt="First slide"
-                    />
-                </Carousel.Item>
-            )}
-        </Carousel>
+        <>
+            {
+                date.length > 0 ?
+                    <Carousel variant="dark">
+                        {date.map(d =>
+                            <Carousel.Item key={d}>
+                                <img
+                                    className="d-block w-100"
+                                    src={d}
+                                    alt="First slide"
+                                />
+                            </Carousel.Item>)}
+                    </Carousel>
+                    : ""
+            }
+        </>
     );
 }
 
