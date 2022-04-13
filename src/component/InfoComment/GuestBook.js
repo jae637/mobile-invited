@@ -26,7 +26,6 @@ function GuestBook() {
         if (form.checkValidity() === true) {
             try {
                 Firebase.addGuestBook({ name, password, contents, date: new Date() })
-                console.log(await Firebase.getGuestBook(5));
             } catch (e) {
                 alert(e)
             }
