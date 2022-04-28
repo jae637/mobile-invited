@@ -8,10 +8,12 @@ function GuestBook() {
     const [validated, setValidated] = React.useState(false);
     const [name, setName] = React.useState('');
     const [password, setPassword] = React.useState('');
+    const [title, setTitle] = React.useState('');
     const [contents, setContents] = React.useState('');
 
     const handleClose = () => {
         setShow(false);
+        setTitle('');
         setName('');
         setPassword('');
         setContents('');
@@ -25,7 +27,7 @@ function GuestBook() {
         event.stopPropagation();
         if (form.checkValidity() === true) {
             try {
-                Firebase.addGuestBook({ name, password, contents, date: new Date() })
+                Firebase.addGuestBook({ name, title, password, contents, date: new Date() })
             } catch (e) {
                 alert(e)
             }
@@ -47,6 +49,16 @@ function GuestBook() {
                     </Modal.Header>
                     <Modal.Body>
                         <Container>
+                            <Row>
+                                <Col md={12} className="mb-2">
+                                    <Form.Control
+                                        type="input"
+                                        required
+                                        onChange={(e) => { setTitle(e.target.value) }}
+                                        value={title}
+                                        placeholder="제목" />
+                                </Col>
+                            </Row>
                             <Row>
                                 <Col md={12} className="mb-2">
                                     <Form.Control
