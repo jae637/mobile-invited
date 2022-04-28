@@ -1,8 +1,8 @@
 import React from 'react';
-import { ListGroup, Badge } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
 
 
-function GuestBookList({ list, setList }) {
+function GuestBookList({ list }) {
     return (
         <div>
             <ListGroup as="ol" numbered>
@@ -12,12 +12,9 @@ function GuestBookList({ list, setList }) {
                         className="d-flex justify-content-between align-items-start"
                     >
                         <div className="ms-2 me-auto">
-                            <div className="fw-bold">{item.contents}</div>
+                            <div className="fw-bold">{item.title}</div>
                             {item.name}
                         </div>
-                        <Badge style={{ cursor: 'pointer' }} bg="danger" onClick={() => { console.log('test') }}>
-                            X
-                    </Badge>
                     </ListGroup.Item>
                 )
                 }
