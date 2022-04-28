@@ -11,7 +11,7 @@ const firebaseConfig = {
     projectId: "mobile-invited",
     storageBucket: "mobile-invited.appspot.com",
     messagingSenderId: "586130120798",
-    appId: "1:586130120798:web:df497ff0954371aee154cf"
+    appId: "1:586130120798:web:df497ff0954371aee154cf",
 };
 
 // Initialize Firebase
@@ -26,7 +26,9 @@ const functions = {
         return url;
     },
     async getGuestBook(count) {
-        let q = await query(collection(db, "guestbook"), orderBy("date", "desc"), limit(count));
+        let q = ''
+        if (count) q = await query(collection(db, "guestbook"), orderBy("date", "desc"), limit(count));
+        else q = await query(collection(db, "guestbook"), orderBy("date", "desc"));
         let querySnapshot = await getDocs(q);
         let returnData = []
         querySnapshot.forEach((doc) => {
