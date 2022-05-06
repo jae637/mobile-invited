@@ -23,7 +23,7 @@ function DetailContents({ item }) {
                     FirebaseApi.deleteGuestBoock(hash).then(result => {
                         if (result === true) {
                             alert("삭제 되었습니다.")
-                            // window.location.reload();
+                            window.location.reload();
                         }
                     })
                 } else {
