@@ -6,11 +6,14 @@ import GuestBookList from "./InfoComment/GuestBookList";
 import GuestBookDetailList from "./InfoComment/GuestBookDetailList";
 
 function InfoComment() {
+    const [allGuestBooks, setAllGuestBooks] = React.useState([])
     const [guestBooks, setGuestBooks] = React.useState([])
     React.useEffect(() => {
         console.log("몇번 호출되는지")
-        Firebase.getGuestBook(5).then(datas => {
-            setGuestBooks(datas);
+        Firebase.getGuestBook().then(datas => {
+            console.log(datas)
+            setAllGuestBooks(datas)
+            setGuestBooks(datas.filter((value, index) => index < 5));
         })
     }, [])
     return (
@@ -20,7 +23,7 @@ function InfoComment() {
             <GuestBookList list={guestBooks} />
             <span style={{ display: "flex", justifyContent: "space-between" }}>
                 <GuestBook />
-                <GuestBookDetailList />
+                <GuestBookDetailList list={allGuestBooks} />
             </span>
         </div>
     );

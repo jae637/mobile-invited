@@ -27,7 +27,10 @@ function GuestBook() {
         event.stopPropagation();
         if (form.checkValidity() === true) {
             try {
-                Firebase.addGuestBook({ name, title, password, contents, date: new Date() })
+                Firebase.addGuestBook({ name, title, password, contents, date: new Date() }).then(result => {
+                    alert("완료 되었습니다.")
+                    window.location.reload();
+                })
             } catch (e) {
                 alert(e)
             }
@@ -42,7 +45,7 @@ function GuestBook() {
                 글 쓰기
             </Button>
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={show} onHide={handleClose} size="lg">
                 <Form noValidate validated={validated} onSubmit={(e) => { handleSubmit(e); return false; }}>
                     <Modal.Header closeButton>
                         <Modal.Title>방명록 글 쓰기</Modal.Title>
@@ -64,7 +67,7 @@ function GuestBook() {
                                     <Form.Control
                                         style={{
                                             resize: 'none',
-                                            height: '10em'
+                                            height: '20em'
                                         }}
                                         required
                                         onChange={(e) => { setContents(e.target.value) }}

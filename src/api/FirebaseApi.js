@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { getFirestore, collection, query, orderBy, limit, getDocs, addDoc } from "firebase/firestore";
+import { getFirestore, collection, query, orderBy, getDocs, addDoc, updateDoc, doc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,14 +25,16 @@ const functions = {
         let url = await getDownloadURL(pictureUrl)
         return url;
     },
-    async getGuestBook(count) {
-        let q = ''
-        if (count) q = await query(collection(db, "guestbook"), orderBy("date", "desc"), limit(count));
-        else q = await query(collection(db, "guestbook"), orderBy("date", "desc"));
+    async getGuestBook() {
+        let q = await query(collection(db, "guestbook"), orderBy("date", "desc"));
         let querySnapshot = await getDocs(q);
         let returnData = []
-        querySnapshot.forEach((doc) => {
-            returnData.push(doc.data())
+        querySnapshot.forEach((item) => {
+            if (item.data().visiable !== false) {
+                let obj = {}
+                obj[item.id] = item.data()
+                returnData.push(obj)
+            }
         })
         return returnData;
     },
@@ -40,6 +42,16 @@ const functions = {
         try {
             const docRef = await addDoc(collection(db, "guestbook"), contents);
             return docRef.id
+        } catch (e) {
+            throw e
+        }
+    },
+    async deleteGuestBoock(hash) {
+        try {
+            const docRef = doc(db, "guestbook", hash);
+            console.log(hash, docRef)
+            await updateDoc(docRef, { visiable: false })
+            return true
         } catch (e) {
             throw e
         }
