@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Firebase from 'api/FirebaseApi'
 import DetailContents from './GuestBook/DetailContents'
 import { Modal, Button, Container, Pagination, ListGroup } from 'react-bootstrap'
 import GuestBook from './GuestBook';
@@ -13,20 +12,8 @@ function GuestBookDetailList(props) {
         console.log(props.list)
         setGuestBookData(props.list)
     }, [props])
-    const handleClose = () => {
-        setShow(false);
-        setGuestBookData([])
-    }
-    const handleShow = async () => {
-        let data = []
-        try {
-            data = await Firebase.getGuestBook();
-        } catch (e) {
-            console.log(e)
-        }
-        setShow(true)
-        setGuestBookData(data)
-    };
+    const handleClose = () => { setShow(false); }
+    const handleShow = () => { setShow(true) };
     const Paging = () => {
         let result = [];
         if (page > 3)
