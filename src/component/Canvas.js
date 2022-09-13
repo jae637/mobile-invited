@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import cursor1 from 'asset/cursor1.png'
 import cursor2 from 'asset/cursor2.png'
 import cursor3 from 'asset/cursor3.png'
@@ -10,10 +10,10 @@ function Canvas(props) {
     const bgRef = useRef();
     const [ctx, setCtx] = useState();
     const [second, setSecond] = useState(0);
-    const [minX, setMinX] = useState(0);
-    const [maxX, setMaxX] = useState(0);
-    const [minY, setMinY] = useState(0);
-    const [maxY, setMaxY] = useState(0);
+    // const [minX, setMinX] = useState(0);
+    // const [maxX, setMaxX] = useState(0);
+    // const [minY, setMinY] = useState(0);
+    // const [maxY, setMaxY] = useState(0);
     const [pos, setPos] = useState({})
     const [moving, setMoving] = useState();
 

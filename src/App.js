@@ -1,7 +1,7 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import InfoComment from './component/InfoComment'
-import WeddingCards from './component/WeddingCards'
-import TitleComponent from './component/TitleComponent'
+// import { Container, Row, Col } from 'react-bootstrap';
+// import InfoComment from './component/InfoComment'
+// import WeddingCards from './component/WeddingCards'
+// import TitleComponent from './component/TitleComponent'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
