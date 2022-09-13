@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-import { getFirestore, collection, query, orderBy, getDocs, addDoc, updateDoc, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc, updateDoc, doc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -26,8 +26,7 @@ const functions = {
         return url;
     },
     async getGuestBook() {
-        let q = await query(collection(db, "guestbook"), orderBy("date", "desc"));
-        let querySnapshot = await getDocs(q);
+        let querySnapshot = await getDocs(collection(db, "guestbook"));
         let returnData = []
         querySnapshot.forEach((item) => {
             if (item.data().visiable !== false) {
@@ -36,6 +35,12 @@ const functions = {
                 returnData.push(obj)
             }
         })
+        console.log(returnData)
+        returnData.sort((a, b) => {
+            return Object.values(b)[0]['date'] - Object.values(a)[0]['date']
+        })
+        console.log(returnData)
+
         return returnData;
     },
     async addGuestBook(contents) {
