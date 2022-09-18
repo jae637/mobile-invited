@@ -8,10 +8,11 @@ function GuestBookDetailList(props) {
     const [show, setShow] = React.useState(false);
     const [guestBookData, setGuestBookData] = React.useState([]);
     const [page, setPage] = React.useState(1)
+
     React.useEffect(() => {
-        console.log(props.list)
         setGuestBookData(props.list)
     }, [props])
+
     const handleClose = () => { setShow(false); }
     const handleShow = () => { setShow(true) };
     const Paging = () => {
@@ -33,7 +34,7 @@ function GuestBookDetailList(props) {
         console.log(result)
         return result
     }
-    console.log(parseInt(guestBookData.length / 10) + 1)
+
     return (
         <div>
             <Button variant="primary" onClick={handleShow}>

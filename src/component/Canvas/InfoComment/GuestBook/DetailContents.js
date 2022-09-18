@@ -51,7 +51,7 @@ function DetailContents({ item }) {
                     {item[Object.keys(item)[0]].name}
                 </div>
             </ListGroup.Item>
-            <Modal show={show} onHide={handleClose} size="lg">
+            <Modal show={show} onHide={handleClose} size="lg" centered>
                 <Modal.Header style={{ display: 'flex', alignContent: "justifyContent" }}>
                     <Modal.Title>{item[Object.keys(item)[0]].title}</Modal.Title>
                     <BsFillTrashFill className="mr-5" style={{ cursor: 'pointer' }} variant="danger" onClick={() => { setDeleteShow(true) }}></BsFillTrashFill>

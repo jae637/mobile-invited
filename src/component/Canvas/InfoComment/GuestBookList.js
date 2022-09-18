@@ -5,7 +5,7 @@ import DetailContents from './GuestBook/DetailContents'
 
 function GuestBookList({ list }) {
     return (
-        <div>
+        <div className='mb-3'>
             <ListGroup as="ol" >
                 {list.map((item, index) => <DetailContents item={item} />)}
             </ListGroup>

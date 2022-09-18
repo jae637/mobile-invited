@@ -45,7 +45,7 @@ function GuestBook() {
                 글 쓰기
             </Button>
 
-            <Modal show={show} onHide={handleClose} size="lg">
+            <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="guest-book-modal">
                 <Form noValidate validated={validated} onSubmit={(e) => { handleSubmit(e); return false; }}>
                     <Modal.Header closeButton>
                         <Modal.Title>방명록 글 쓰기</Modal.Title>
