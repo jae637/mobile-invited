@@ -8,18 +8,18 @@ import GuestBookDetailList from "./InfoComment/GuestBookDetailList";
 function InfoComment() {
     const [allGuestBooks, setAllGuestBooks] = React.useState([])
     const [guestBooks, setGuestBooks] = React.useState([])
+
     React.useEffect(() => {
         console.log("몇번 호출되는지")
         Firebase.getGuestBook().then(datas => {
             console.log(datas)
             setAllGuestBooks(datas)
-            setGuestBooks(datas.filter((value, index) => index < 5));
+            setGuestBooks(datas.filter((value, index) => index < 10));
         })
     }, [])
+
     return (
         <div>
-            길고 긴 시간 끝에 두 사람이 만나 하나가 되는 날입니다.<br />
-            행복한 나날들이 있도록 오셔서 축복해 주시고 지켜봐 주십시오.
             <GuestBookList list={guestBooks} />
             <span style={{ display: "flex", justifyContent: "space-between" }}>
                 <GuestBook />
