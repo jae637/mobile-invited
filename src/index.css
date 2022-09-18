@@ -15,4 +15,5 @@ code {
 
 .modal-content {
   background-color: antiquewhite !important; 
+  height: auto !important;
 }
