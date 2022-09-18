@@ -4,9 +4,11 @@ import cursor2 from 'asset/cursor2.png'
 import cursor3 from 'asset/cursor3.png'
 import cursor4 from 'asset/cursor4.png'
 import background from 'asset/background.png'
-import WeddingCards from './Canvas/WeddingCards';
 import { Container, Modal } from 'react-bootstrap';
+
+import WeddingCards from './Canvas/WeddingCards';
 import InfoComment from './Canvas/InfoComment';
+import DeliverHeart from './Canvas/DeliverHeart';
 
 function Canvas(props) {
     const canvasRef = useRef();
@@ -23,6 +25,7 @@ function Canvas(props) {
 
     const [weddingCardModal, setWeddingCardModal] = useState(false);
     const [guestBookModal, setGuestBookModal] = useState(false);
+    const [deliverhear, setDeliverhear] = useState(false);
 
     const charactor = [cursor1, cursor2, cursor3, cursor4]
 
@@ -142,6 +145,7 @@ function Canvas(props) {
                     setGuestBookModal(true)
                     break;
                 case 4:
+                    setDeliverhear(true)
                     break;
                 default:
                     break;
@@ -162,7 +166,7 @@ function Canvas(props) {
             let i = 0;
             let tick = setInterval(() => {
                 if (i < divide) {
-                    setPos({ x: pos.x + distX * i, y: pos.y + distY * i });
+                    setPos((prev) => ({ x: prev.x + distX, y: prev.y + distY }));
                     i += 1;
                 } else {
                     clearInterval(tick)
@@ -217,6 +221,24 @@ function Canvas(props) {
                 </Container>
             </Modal>
             {/* 4. 마음 전하는 곳 모달 */}
+            <Modal
+                size="lg"
+                show={deliverhear}
+                fullscreen
+                onHide={() => setDeliverhear(false)}
+                aria-labelledby="example-modal-sizes-title-lg"
+            >
+                <Container>
+                    <Modal.Header closeButton>
+                        <Modal.Title id="example-modal-sizes-title-lg">
+                            마음 전하는 곳
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <DeliverHeart />
+                    </Modal.Body>
+                </Container>
+            </Modal>
         </>
     );
 }
