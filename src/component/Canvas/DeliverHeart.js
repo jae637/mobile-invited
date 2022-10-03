@@ -3,10 +3,14 @@ import { Card, ListGroup } from 'react-bootstrap';
 
 function DeliverHeart(props) {
     function clipboard(text) {
-        navigator.clipboard.writeText(text)
-            .then(() => {
-                alert("복사가 완료되었습니다.")
-            })
+        var aux = document.createElement("textarea");
+        aux.value = text;
+        document.body.appendChild(aux);
+        aux.select();
+        aux.setSelectionRange(0, 9999);
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+        alert("복사가 완료되었습니다.")
     }
     return (
         <>

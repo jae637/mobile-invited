@@ -9,6 +9,7 @@ import { Container, Modal } from 'react-bootstrap';
 import WeddingCards from './Canvas/WeddingCards';
 import InfoComment from './Canvas/InfoComment';
 import DeliverHeart from './Canvas/DeliverHeart';
+import HallMap from './Canvas/HallMap';
 
 function Canvas(props) {
     const canvasRef = useRef();
@@ -25,7 +26,8 @@ function Canvas(props) {
 
     const [weddingCardModal, setWeddingCardModal] = useState(false);
     const [guestBookModal, setGuestBookModal] = useState(false);
-    const [deliverhear, setDeliverhear] = useState(false);
+    const [deliverheart, setDeliverheart] = useState(false);
+    const [hallMap, setHallMap] = useState(false);
 
     const charactor = [cursor1, cursor2, cursor3, cursor4]
 
@@ -112,7 +114,7 @@ function Canvas(props) {
         let centerX = window.innerWidth / 2;
         let centerY = window.innerHeight / 2;
 
-        if (a < 255) {
+        if (a <= 255) {
             if (clickPoint.x < centerX - 10 && clickPoint.y < centerY - 10) {
                 //인사말
                 return 1;
@@ -140,12 +142,13 @@ function Canvas(props) {
                     setWeddingCardModal(true)
                     break;
                 case 2:
+                    setHallMap(true)
                     break;
                 case 3:
                     setGuestBookModal(true)
                     break;
                 case 4:
-                    setDeliverhear(true)
+                    setDeliverheart(true)
                     break;
                 default:
                     break;
@@ -201,6 +204,25 @@ function Canvas(props) {
                 </Container>
             </Modal>
             {/* 2. 오시는 길 모달*/}
+            <Modal
+                size="lg"
+                show={hallMap}
+                fullscreen
+                onHide={() => setHallMap(false)}
+                aria-labelledby="example-modal-sizes-title-lg"
+                className="modal-fullscreen"
+            >
+                <Container>
+                    <Modal.Header closeButton>
+                        <Modal.Title id="example-modal-sizes-title-lg">
+                            오시는 길
+                    </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <HallMap />
+                    </Modal.Body>
+                </Container>
+            </Modal>
             {/* 3. 방명록 모달 */}
             <Modal
                 size="lg"
@@ -223,9 +245,9 @@ function Canvas(props) {
             {/* 4. 마음 전하는 곳 모달 */}
             <Modal
                 size="lg"
-                show={deliverhear}
+                show={deliverheart}
                 fullscreen
-                onHide={() => setDeliverhear(false)}
+                onHide={() => setDeliverheart(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
                 <Container>
