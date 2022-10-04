@@ -3,13 +3,13 @@ import cursor1 from 'asset/cursor1.png'
 import cursor2 from 'asset/cursor2.png'
 import cursor3 from 'asset/cursor3.png'
 import cursor4 from 'asset/cursor4.png'
-import background from 'asset/background.png'
 import { Container, Modal } from 'react-bootstrap';
 
 import WeddingCards from './Canvas/WeddingCards';
 import InfoComment from './Canvas/InfoComment';
 import DeliverHeart from './Canvas/DeliverHeart';
 import HallMap from './Canvas/HallMap';
+import FirebaseApi from 'api/FirebaseApi'
 
 function Canvas(props) {
     const canvasRef = useRef();
@@ -55,7 +55,10 @@ function Canvas(props) {
 
 
         let bg = new Image();
-        bg.src = background;
+        FirebaseApi.getImageURL("background.png").then(imgData => {
+            bg.crossOrigin = "Anonymous"
+            bg.src = imgData;
+        })
         bg.onload = () => {
             console.log(offset)
             bgcanvas.getContext("2d").drawImage(bg, offset.x, offset.y, width, height)
