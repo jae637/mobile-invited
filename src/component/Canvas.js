@@ -31,6 +31,21 @@ function Canvas(props) {
 
     const charactor = [cursor1, cursor2, cursor3, cursor4]
 
+    useEffect(() => {
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                if (weddingCardModal | guestBookModal | deliverheart | hallMap) {
+                    setWeddingCardModal(false);
+                    setGuestBookModal(false);
+                    setDeliverheart(false);
+                    setHallMap(false);
+                    event.preventDefulat();
+                } else {
+                    return true;
+                }
+            }
+        };
+    }, [])
 
     useEffect(() => {
         let tPer = window.innerHeight / 1080;
