@@ -16,10 +16,6 @@ function Canvas(props) {
     const bgRef = useRef();
     const [ctx, setCtx] = useState();
     const [second, setSecond] = useState(0);
-    // const [minX, setMinX] = useState(0);
-    // const [maxX, setMaxX] = useState(0);
-    // const [minY, setMinY] = useState(0);
-    // const [maxY, setMaxY] = useState(0);
     const [pos, setPos] = useState({})
     const [moving, setMoving] = useState();
     const [persent, setPersent] = useState(1); //캐릭터 및 배경화면 비율
@@ -30,7 +26,6 @@ function Canvas(props) {
     const [hallMap, setHallMap] = useState(false);
 
     const charactor = [cursor1, cursor2, cursor3, cursor4]
-
 
     useEffect(() => {
         let tPer = window.innerHeight / 1080;
@@ -49,10 +44,6 @@ function Canvas(props) {
         bgcanvas.height = window.innerHeight > 1080 ? window.innerHeight : 1080;
 
         let offset = calculateOffset(window.innerWidth, window.innerHeight, width, height)
-        // let offset = calculateOffset(width, height)
-        // let offset = calculateOffset(window.innerWidth, window.innerHeight)
-
-
 
         let bg = new Image();
         FirebaseApi.getImageURL("background.png").then(imgData => {
@@ -71,8 +62,6 @@ function Canvas(props) {
     useEffect(() => {
         const countdown = setInterval(() => {
             setSecond(second + 1);
-            // if (ctx)
-            //     ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
         }, 500);
         return () => clearInterval(countdown);
     }, [second]);
@@ -110,14 +99,14 @@ function Canvas(props) {
 
     function clickContents(e) {
         let picxelData = bgRef.current.getContext("2d").getImageData(e.clientX, e.clientY, 1, 1).data;
-        console.log(`%c 투명도: (${picxelData[3]})`, `background:rgba(${picxelData[0]},${picxelData[1]},${picxelData[2]},${picxelData[3]}`)
+        // console.log(`%c 투명도: (${picxelData[3]})`, `background:rgba(${picxelData[0]},${picxelData[1]},${picxelData[2]},${picxelData[3]}`)
         let a = picxelData[3]
 
         let clickPoint = { x: e.clientX, y: e.clientY };
         let centerX = window.innerWidth / 2;
         let centerY = window.innerHeight / 2;
 
-        if (a <= 255) {
+        if (a < 255) {
             if (clickPoint.x < centerX - 10 && clickPoint.y < centerY - 10) {
                 //인사말
                 return 1;
@@ -190,7 +179,7 @@ function Canvas(props) {
             <Modal
                 size="lg"
                 show={weddingCardModal}
-                fullscreen
+                centered
                 onHide={() => setWeddingCardModal(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
                 className="modal-fullscreen"
@@ -210,7 +199,7 @@ function Canvas(props) {
             <Modal
                 size="lg"
                 show={hallMap}
-                fullscreen
+                centered
                 onHide={() => setHallMap(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
                 className="modal-fullscreen"
@@ -219,7 +208,7 @@ function Canvas(props) {
                     <Modal.Header closeButton>
                         <Modal.Title id="example-modal-sizes-title-lg">
                             오시는 길
-                    </Modal.Title>
+                        </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <HallMap />
@@ -230,26 +219,19 @@ function Canvas(props) {
             <Modal
                 size="lg"
                 show={guestBookModal}
-                fullscreen
+                centered
                 onHide={() => setGuestBookModal(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
                 <Container>
-                    <Modal.Header closeButton>
-                        <Modal.Title id="example-modal-sizes-title-lg">
-                            방명록
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <InfoComment />
-                    </Modal.Body>
+                    <InfoComment />
                 </Container>
             </Modal>
             {/* 4. 마음 전하는 곳 모달 */}
             <Modal
                 size="lg"
                 show={deliverheart}
-                fullscreen
+                centered
                 onHide={() => setDeliverheart(false)}
                 aria-labelledby="example-modal-sizes-title-lg"
             >
