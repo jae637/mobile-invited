@@ -106,7 +106,7 @@ function Canvas(props) {
         let centerX = window.innerWidth / 2;
         let centerY = window.innerHeight / 2;
 
-        if (a <= 255) {
+        if (a < 255) {
             if (clickPoint.x < centerX - 10 && clickPoint.y < centerY - 10) {
                 //인사말
                 return 1;
