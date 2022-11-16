@@ -24,25 +24,27 @@ function Main() {
 
     function MovingDot() {
         let imgArr = [Banner1, Banner2, Banner3, Banner4, Banner5, Banner6]
-        return <img src={imgArr[bannerIndex % imgArr.length]} alt="banner" />
+        return <div className="background-banner">
+            <img src={imgArr[bannerIndex % imgArr.length]} alt="banner" />
+        </div>
     }
 
     return (
         <div className="d-flex flex-column align-content-center justify-content-center"
             style={{ textAlign: 'center', width: window.innerWidth, height: window.innerHeight, backgroundColor: '#e3b2ad' }}>
-            <div>
+            <div className="background-banner d-flex d-row align-items-top justify-content-center">
                 <img src={titleImg} alt="title" />
             </div>
             <div className="d-flex d-row align-items-top justify-content-center">
-                <div className='py-2 d-flex align-items-baseline mt-4' >
-                    <div className="p-2 bg-white" style={{ borderRadius: 8 }}>
+                <div className='speech-balloon py-2 d-flex align-items-baseline mt-4' >
+                    <div className="p-2 bg-white" style={{ borderRadius: 8, fontSize: '0.8rem' }}>
                         '{personalName}' 님을 <br />
                         초대합니다.
                     </div>
                 </div>
                 <MovingDot />
             </div>
-            <div className="d-flex align-items-center flex-column">
+            <div className="background-banner d-flex align-items-center flex-column">
                 <MainMenu />
             </div>
         </div>
