@@ -17,3 +17,11 @@ code {
   background-color: antiquewhite !important; 
   height: auto !important;
 }
+
+@media(max-width:600px){
+  .background-banner img{
+    max-width: 90%;
+    height: auto;
+    display: block;
+  }
+}
