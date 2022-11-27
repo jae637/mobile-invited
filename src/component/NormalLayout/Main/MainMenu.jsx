@@ -9,9 +9,11 @@ import infoImgActive from 'asset/images/03방명록_select.png';
 import deliverHeartImg from 'asset/images/04마음전하시는곳.png';
 import deliverHeartImgActive from 'asset/images/04마음전하시는곳_select.png';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MainMenu(props) {
     const [select, setSelect] = useState('None')
+    const navigate = useNavigate()
 
     return (
         <>
@@ -29,7 +31,7 @@ function MainMenu(props) {
             }
             {select !== 'deliver' ?
                 <img src={deliverHeartImg} alt="deliverHeartImg" onClick={(e) => { setSelect("deliver") }}></img> :
-                <img src={deliverHeartImgActive} alt="deliverHeartImgActive"></img>
+                <img src={deliverHeartImgActive} alt="deliverHeartImgActive" onClick={() => navigate("deliver-heart")}></img>
             }
         </>
     );
