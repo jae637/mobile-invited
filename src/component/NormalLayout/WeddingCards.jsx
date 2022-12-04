@@ -13,6 +13,10 @@ function WeddingCards() {
 
     const navigation = useNavigate()
 
+    function maxWidth() {
+        return 520 > window.innerWidth ? window.innerWidth - 80 : 480
+    }
+
     React.useEffect(() => {
         async function dataPush() {
             let data = []
@@ -37,7 +41,7 @@ function WeddingCards() {
                 <MovingDot />
             </div>
             <div className="d-flex align-items-top justify-content-center my-3">
-                <div className="mb-2 py-3 bg-white text-center" style={{ borderRadius: 8, maxWidth: 380, width: "100%" }}>
+                <div className="mb-2 py-3 bg-white text-center" style={{ borderRadius: 8, maxWidth: maxWidth(), width: "100%" }}>
                     저희 두 사람이 만나<br></br>
                     사랑으로 하나의 가정을<br></br>
                     이루게 되었습니다.<br></br>
