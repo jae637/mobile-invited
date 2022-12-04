@@ -27,22 +27,8 @@ function WeddingCards() {
     }, [])
 
     return (
-        <div className="d-flex flex-column align-content-center py-5">
-            <div className="d-flex flex-column align-items-top justify-content-center my-3 text-center">
-                <h3>《 인사말 》</h3>
-                <br></br>
-                저희 두 사람이 만나<br></br>
-                    사랑으로 하나의 가정을<br></br>
-                    이루게 되었습니다.<br></br>
-                <br></br>
-                    바쁘신 가운데 두 사람의<br></br>
-                    앞날을 축복해 주시면<br></br>
-                    감사하겠습니다.
-            </div>
-            {/* <div className="d-flex align-items-top justify-content-center my-3">
-                <MovingDot />
-            </div> */}
-            <div className="d-flex align-items-top justify-content-center mt-4">
+        <div className="d-flex flex-column align-content-center">
+            <div className="d-flex align-items-top justify-content-center ">
                 <div style={{ width: 480 }}>
                     {
                         cardItem.length > 0 ?
@@ -60,6 +46,21 @@ function WeddingCards() {
                     }
                 </div>
             </div>
+            <div className="d-flex flex-column align-items-top justify-content-center my-3 text-center">
+                <h3>《 인사말 》</h3>
+                <br></br>
+                저희 두 사람이 만나<br></br>
+                    사랑으로 하나의 가정을<br></br>
+                    이루게 되었습니다.<br></br>
+                <br></br>
+                    바쁘신 가운데 두 사람의<br></br>
+                    앞날을 축복해 주시면<br></br>
+                    감사하겠습니다.
+            </div>
+            {/* <div className="d-flex align-items-top justify-content-center my-3">
+                <MovingDot />
+            </div> */}
+
         </div>
     );
 }

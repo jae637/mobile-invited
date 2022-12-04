@@ -27,19 +27,20 @@ function DeliverHeart(props) {
                     <div className="p-2 bg-white" style={{ borderRadius: 8, fontSize: '0.8rem' }}>
                         '{personalName}' 님의 <br />
                         따뜻한 마음 <br />
-                        고맙습니다.
+                        감사합니다.
                     </div>
                 </div>
             </div>
-            <div className="align-self-center">
-                <Card style={{ width: '100%' }} className={"my-2 "}>
+            <div className="d-flex flex-column align-items-center justify-content-center">
+                <Card style={{ width: '85%' }} className={"my-2 mt-4"}>
                     <Card.Body>
-                        <Card.Title className="text-center">신랑 측 마음 전하는 곳</Card.Title>
+                        <Card.Title className="text-center mb-0">신랑 측 마음 전하는 곳</Card.Title>
                         <ListGroup className="list-group-flush">
                             <ListGroup.Item className="d-flex justify-content-between align-items-center" onClick={() => { clipboard("우리은행 1002961499443") }}>
                                 <span>
                                     신랑 최재형 <br />
-                                    우리은행 : 1002-961-499443
+                                    우리은행 : <br />
+                                     1002-961-499443
                                     </span>
                                 <span className="ps-4">
                                     <FaRegCopy />
@@ -48,14 +49,14 @@ function DeliverHeart(props) {
                         </ListGroup>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '100%' }} className={"my-2"}>
+                <Card style={{ width: '85%' }} className={"my-2"}>
                     <Card.Body>
-                        <Card.Title className="text-center">신부 측 마음 전하는 곳</Card.Title>
+                        <Card.Title className="text-center mb-0">신부 측 마음 전하는 곳</Card.Title>
                         <ListGroup className="list-group-flush">
                             <ListGroup.Item className="d-flex justify-content-between align-items-center" onClick={() => { clipboard("카카오뱅크 3333030755400") }}>
                                 <span>
                                     신부 한소람 <br />
-                                    카카오뱅크 : 3333-030-755400
+                                    카카오뱅크 : <br />3333-030-755400
                                 </span>
                                 <span className="ps-4">
                                     <FaRegCopy />
