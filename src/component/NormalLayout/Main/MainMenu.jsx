@@ -19,7 +19,7 @@ function MainMenu(props) {
         <>
             {select !== 'wedding' ?
                 <img src={weddingCardImg} alt="weddingCardImg" onClick={(e) => setSelect("wedding")} /> :
-                <img src={weddingCardImgActive} alt="weddingCardImgActive"></img>
+                <img src={weddingCardImgActive} alt="weddingCardImgActive" onClick={() => navigate("wedding-cards")}></img>
             }
             {select !== 'hall' ?
                 <img src={hallMapImg} alt="hallMapImg" onClick={(e) => { setSelect("hall") }}></img> :
