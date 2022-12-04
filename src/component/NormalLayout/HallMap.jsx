@@ -29,8 +29,8 @@ function HallMap(props) {
                 </div>
             </div>
             <div className="d-flex d-row align-items-top justify-content-center pt-3 ">
-                <div className="m-2 pt-2 px-2 bg-white" style={{ borderRadius: 8 }}>
-                    <h4>오시는 길</h4>
+                <div className="m-2 pt-2 px-3 bg-white" style={{ borderRadius: 8 }}>
+                    <h4> 《 오시는 길 》 </h4>
                 </div>
             </div>
             <div className="d-flex align-content-center justify-content-center">
