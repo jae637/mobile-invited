@@ -1,7 +1,7 @@
 import React from 'react';
 
 import DetailContents from './GuestBookList/DetailContents'
-import { Modal, Container, Pagination, ListGroup } from 'react-bootstrap'
+import { Container, Pagination, ListGroup } from 'react-bootstrap'
 import GuestBook from './GuestBook';
 
 function GuestBookDetailList(props) {
