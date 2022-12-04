@@ -18,20 +18,20 @@ function MainMenu(props) {
     return (
         <>
             {select !== 'wedding' ?
-                <img src={weddingCardImg} alt="weddingCardImg" onClick={(e) => setSelect("wedding")} /> :
-                <img src={weddingCardImgActive} alt="weddingCardImgActive" onClick={() => navigate("wedding-cards")}></img>
+                <img style={{ width: '50%' }} src={weddingCardImg} alt="weddingCardImg" onClick={(e) => setSelect("wedding")} /> :
+                <img style={{ width: '50%' }} src={weddingCardImgActive} alt="weddingCardImgActive" onClick={() => navigate("wedding-cards")}></img>
             }
             {select !== 'hall' ?
-                <img src={hallMapImg} alt="hallMapImg" onClick={(e) => { setSelect("hall") }}></img> :
-                <img src={hallMapImgActive} alt="hallMapImgActive" onClick={() => navigate("map")} ></img>
+                <img style={{ width: '50%' }} src={hallMapImg} alt="hallMapImg" onClick={(e) => { setSelect("hall") }}></img> :
+                <img style={{ width: '50%' }} src={hallMapImgActive} alt="hallMapImgActive" onClick={() => navigate("map")} ></img>
             }
             {select !== 'info' ?
-                <img src={infoImg} alt="infoImg" onClick={(e) => { setSelect("info") }}></img> :
-                <img src={infoImgActive} alt="infoImgActive" onClick={() => navigate("info")}></img>
+                <img style={{ width: '50%' }} src={infoImg} alt="infoImg" onClick={(e) => { setSelect("info") }}></img> :
+                <img style={{ width: '50%' }} src={infoImgActive} alt="infoImgActive" onClick={() => navigate("info")}></img>
             }
             {select !== 'deliver' ?
-                <img src={deliverHeartImg} alt="deliverHeartImg" onClick={(e) => { setSelect("deliver") }}></img> :
-                <img src={deliverHeartImgActive} alt="deliverHeartImgActive" onClick={() => navigate("deliver-heart")}></img>
+                <img style={{ width: '50%' }} src={deliverHeartImg} alt="deliverHeartImg" onClick={(e) => { setSelect("deliver") }}></img> :
+                <img style={{ width: '50%' }} src={deliverHeartImgActive} alt="deliverHeartImgActive" onClick={() => navigate("deliver-heart")}></img>
             }
         </>
     );
