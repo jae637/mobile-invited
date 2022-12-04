@@ -23,7 +23,7 @@ function MainMenu(props) {
             }
             {select !== 'hall' ?
                 <img src={hallMapImg} alt="hallMapImg" onClick={(e) => { setSelect("hall") }}></img> :
-                <img src={hallMapImgActive} alt="hallMapImgActive"></img>
+                <img src={hallMapImgActive} alt="hallMapImgActive" onClick={() => navigate("map")} ></img>
             }
             {select !== 'info' ?
                 <img src={infoImg} alt="infoImg" onClick={(e) => { setSelect("info") }}></img> :
