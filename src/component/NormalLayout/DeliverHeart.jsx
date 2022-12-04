@@ -1,13 +1,11 @@
 import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 
-import titleImg from 'asset/images/00title.png';
 import MovingDot from './Main/MovingDot';
 import { FaRegCopy } from 'react-icons/fa';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function DeliverHeart(props) {
-    const navigation = useNavigate()
     const navigate = useParams();
     const personalName = navigate.name
 
@@ -23,11 +21,6 @@ function DeliverHeart(props) {
     }
     return (
         <div className="d-flex flex-column align-content-center py-5">
-
-            <div className="background-banner d-flex d-row align-items-top justify-content-center">
-                <img src={titleImg} alt="title" onClick={() => { navigation("../") }} />
-            </div>
-
             <div className="d-flex align-items-top justify-content-center">
                 <MovingDot />
                 <div className='speech-balloon py-2 d-flex align-items-baseline mt-4' >
