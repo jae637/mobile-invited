@@ -8,6 +8,10 @@ function GuestBookDetailList(props) {
     const [guestBookData, setGuestBookData] = React.useState([]);
     const [page, setPage] = React.useState(1)
 
+    function maxWidth() {
+        return 480 > window.innerWidth ? window.innerWidth : 480
+    }
+
     React.useEffect(() => {
         setGuestBookData(props.list)
     }, [props])
@@ -32,7 +36,7 @@ function GuestBookDetailList(props) {
     }
 
     return (
-        <div style={{ width: 480 }}>
+        <div style={{ width: maxWidth() }}>
             <div className="m-2 mx-3">
                 <GuestBook />
             </div>
