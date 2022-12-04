@@ -2,6 +2,7 @@ import App from 'App';
 import DeliverHeart from 'component/NormalLayout/DeliverHeart';
 import HallMap from 'component/NormalLayout/HallMap';
 import WeddingCards from 'component/NormalLayout/WeddingCards';
+import InfoComment from 'component/NormalLayout/InfoComment';
 // import Canvas from 'component/Canvas';
 import Main from 'component/NormalLayout/Main';
 import Root from 'component/NormalLayout/Root';
@@ -18,6 +19,7 @@ function Router(props) {
                     <Route path="deliver-heart" element={<DeliverHeart />}></Route>
                     <Route path="wedding-cards" element={<WeddingCards />}></Route>
                     <Route path="map" element={<HallMap />}></Route>
+                    <Route path="info" element={<InfoComment />}></Route>
                 </Route>
                 <Route path="/" element={<Root />}></Route>
                 <Route path="/*" element={<NotFound />}></Route>
