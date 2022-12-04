@@ -21,7 +21,12 @@ function InfoComment() {
     }, [])
 
     return (
-        <div className="d-flex flex-column align-content-center py-5">
+        <div className="d-flex flex-column align-content-center py-3">
+            <div className="d-flex align-items-top justify-content-center pt-3 ">
+                <div className="m-2 pt-2 px-3 bg-white" style={{ borderRadius: 8 }}>
+                    <h4> 《 방명록 》 </h4>
+                </div>
+            </div>
             <div className="d-flex align-items-top justify-content-center">
                 <div className='speech-balloon py-2 d-flex align-items-baseline mt-4' >
                     <div className="p-2 bg-white" style={{ borderRadius: 8, fontSize: '0.8rem', textAlign: 'center' }}>
@@ -32,11 +37,6 @@ function InfoComment() {
                     </div>
                 </div>
                 <MovingDot />
-            </div>
-            <div className="d-flex align-items-top justify-content-center pt-3 ">
-                <div className="m-2 pt-2 px-3 bg-white" style={{ borderRadius: 8 }}>
-                    <h4> 《 방명록 》 </h4>
-                </div>
             </div>
             <div className="d-flex flex-column d-row align-items-center justify-content-center pt-3 ">
                 <GuestBookDetailList list={allGuestBooks} />
