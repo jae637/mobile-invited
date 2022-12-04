@@ -3,15 +3,10 @@ import React from 'react'
 import FirebaseApi from '../../api/FirebaseApi';
 import { Carousel } from 'react-bootstrap'
 
-import titleImg from 'asset/images/00title.png';
 import MovingDot from './Main/MovingDot';
-
-import { useNavigate } from 'react-router-dom';
 
 function WeddingCards() {
     const [cardItem, setCardItem] = React.useState([]);
-
-    const navigation = useNavigate()
 
     function maxWidth() {
         return 520 > window.innerWidth ? window.innerWidth - 80 : 480
@@ -33,10 +28,6 @@ function WeddingCards() {
 
     return (
         <div className="d-flex flex-column align-content-center py-5">
-            <div className="background-banner d-flex d-row align-items-top justify-content-center">
-                <img src={titleImg} alt="title" onClick={() => { navigation("../") }} />
-            </div>
-
             <div className="d-flex align-items-top justify-content-center">
                 <MovingDot />
             </div>
