@@ -12,14 +12,14 @@ function Root(props) {
                 <div className='speech-balloon d-flex align-items-baseline' >
                     <div className="d-grid gap-2 p-4 bg-white" style={{ borderRadius: 8, fontSize: '1rem' }}>
                         이름을 적어주세요
-                        <Form>
+                        <Form action={`/${name}`}>
                             <Form.Control type="text" onChange={(e) => { setName(e.target.value) }} />
                         </Form>
                         <Button variant="outline-primary" onClick={(e) => { navigate(name) }} >확인</Button>{' '}
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
