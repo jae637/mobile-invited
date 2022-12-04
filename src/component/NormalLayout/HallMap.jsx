@@ -17,10 +17,10 @@ function HallMap(props) {
     }, []);
 
     function maxWidth() {
-        return 480 > window.innerWidth ? window.innerWidth : 480
+        return 520 > window.innerWidth ? window.innerWidth - 40 : 480
     }
     function maxHeight() {
-        return 480 > window.innerHeight ? window.innerHeight : 480
+        return 520 > window.innerWidth ? window.innerWidth - 40 : 480
     }
 
     return (
