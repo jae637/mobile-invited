@@ -37,9 +37,14 @@ function WeddingCards() {
                 <MovingDot />
             </div>
             <div className="d-flex align-items-top justify-content-center my-3">
-                <div className="m-2 py-1 px-2 bg-white" style={{ borderRadius: 8 }}>
-                    길고 긴 시간 끝에 두 사람이 만나 하나가 되는 날입니다.<br />
-                    행복한 나날들이 있도록 오셔서 축복해 주시고 지켜봐 주십시오.
+                <div className="mb-2 py-3 bg-white text-center" style={{ borderRadius: 8, maxWidth: 380, width: "100%" }}>
+                    저희 두 사람이 만나<br></br>
+                    사랑으로 하나의 가정을<br></br>
+                    이루게 되었습니다.<br></br>
+                    <br></br>
+                    바쁘신 가운데 두 사람의<br></br>
+                    앞날을 축복해 주시면<br></br>
+                    감사하겠습니다.
                 </div>
             </div>
             <div className="d-flex align-items-top justify-content-center">
