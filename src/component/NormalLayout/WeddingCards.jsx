@@ -6,13 +6,12 @@ import { Carousel } from 'react-bootstrap'
 import titleImg from 'asset/images/00title.png';
 import MovingDot from './Main/MovingDot';
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function WeddingCards() {
     const [cardItem, setCardItem] = React.useState([]);
 
     const navigation = useNavigate()
-    const navigate = useParams();
 
     React.useEffect(() => {
         async function dataPush() {

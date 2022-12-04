@@ -7,12 +7,10 @@ import { Col, Row } from 'react-bootstrap';
 import titleImg from 'asset/images/00title.png';
 import MovingDot from './Main/MovingDot';
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function HallMap(props) {
     const navigation = useNavigate()
-    const navigate = useParams();
-    const personalName = navigate.name
 
     React.useEffect(() => {
         KakaoMapScript();
