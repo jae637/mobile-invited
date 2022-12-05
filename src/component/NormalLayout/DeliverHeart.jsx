@@ -32,7 +32,7 @@ function DeliverHeart(props) {
                 </div>
             </div>
             <div className="d-flex flex-column align-items-center justify-content-center">
-                <Card style={{ width: '85%' }} className={"my-2 mt-4"}>
+                <Card style={{ maxWidth: '85%' }} className={"my-2 mt-4"}>
                     <Card.Body>
                         <Card.Title className="text-center mb-0">신랑 측 마음 전하는 곳</Card.Title>
                         <ListGroup className="list-group-flush">
@@ -49,7 +49,7 @@ function DeliverHeart(props) {
                         </ListGroup>
                     </Card.Body>
                 </Card>
-                <Card style={{ width: '85%' }} className={"my-2"}>
+                <Card style={{ maxWidth: '85%' }} className={"my-2"}>
                     <Card.Body>
                         <Card.Title className="text-center mb-0">신부 측 마음 전하는 곳</Card.Title>
                         <ListGroup className="list-group-flush">

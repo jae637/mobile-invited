@@ -5,7 +5,7 @@ let posY = 127.03345
 export default function KakaoMapScript() {
     const container = document.getElementById('myMap');
     const options = {
-        center: new kakao.maps.LatLng(posX, posY),
+        center: new kakao.maps.LatLng(posX - 0.001, posY),
         level: 4
     };
     const map = new kakao.maps.Map(container, options);
