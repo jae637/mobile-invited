@@ -3,7 +3,6 @@ import KakaoMapScript from "./HallMap/KakaoMapScript";
 
 import { FaSubway, FaBus, FaTaxi } from 'react-icons/fa'
 import { Col, Row } from 'react-bootstrap';
-import MovingDot from './Main/MovingDot';
 
 function HallMap(props) {
     React.useEffect(() => {
