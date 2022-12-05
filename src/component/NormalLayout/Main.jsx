@@ -12,7 +12,7 @@ function Main() {
     return (
         <div className="d-flex flex-column align-content-center py-4">
             <div className="d-flex d-row align-items-top justify-content-center">
-                <div className='speech-balloon py-2 d-flex align-items-baseline mt-4' >
+                <div className='speech-balloon py-2 d-flex align-items-baseline mt-3' >
                     <div className="p-2 bg-white mb-3" style={{ borderRadius: 8, fontSize: '0.9rem', textAlign: 'center' }}>
                         '{personalName}' 님을 초대합니다
                     </div>
