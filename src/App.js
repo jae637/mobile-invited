@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <div className='d-sm-none' onClick={() => { navigate(-1) }}>
+      <div className='d-sm-none' style={{ position: 'absolute', zIndex: 100 }} onClick={() => { navigate(-1) }}>
         <IoChevronBackSharp className="m-2 h3" />
       </div>
       <NormalLayout />
