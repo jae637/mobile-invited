@@ -3,7 +3,6 @@ import KakaoMapScript from "./HallMap/KakaoMapScript";
 
 import { FaSubway, FaBus, FaTaxi } from 'react-icons/fa'
 import { Col, Row } from 'react-bootstrap';
-import MovingDot from './Main/MovingDot';
 
 function HallMap(props) {
     React.useEffect(() => {
@@ -19,17 +18,8 @@ function HallMap(props) {
 
     return (
         <div className="d-flex flex-column align-content-center py-5">
-            <div className="d-flex align-items-top justify-content-center">
-                <MovingDot />
-                <div className='speech-balloon py-2 d-flex align-items-baseline mt-4' >
-                    <div className="p-2 bg-white" style={{ borderRadius: 8, fontSize: '0.8rem' }}>
-                        저희의 예식장<br />
-                        위치입니다.
-                    </div>
-                </div>
-            </div>
-            <div className="d-flex d-row align-items-top justify-content-center pt-3 ">
-                <div className="m-2 pt-2 px-3 bg-white" style={{ borderRadius: 8, textAlign: 'center' }}>
+            <div className="d-flex d-row align-items-top justify-content-center ">
+                <div className="m-2 pt-2 px-3 " style={{ borderRadius: 8, textAlign: 'center' }}>
                     <h4> 《 오시는 길 》 </h4>
                     <div style={{ fontSize: '10pt', marginBottom: 10 }}>
                         서울 강남구 강남대로 262 양재 캠코 타워 B1

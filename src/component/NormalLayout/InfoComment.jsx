@@ -23,17 +23,16 @@ function InfoComment() {
     return (
         <div className="d-flex flex-column align-content-center py-3">
             <div className="d-flex align-items-top justify-content-center pt-3 ">
-                <div className="m-2 pt-2 px-3 bg-white" style={{ borderRadius: 8 }}>
+                <div className="m-2 pt-2 px-3" style={{ borderRadius: 8 }}>
                     <h4> 《 방명록 》 </h4>
                 </div>
             </div>
             <div className="d-flex align-items-top justify-content-center">
                 <div className='speech-balloon py-2 d-flex align-items-baseline mt-4' >
                     <div className="p-2 bg-white" style={{ borderRadius: 8, fontSize: '0.8rem', textAlign: 'center' }}>
-                        '{personalName}' 님<br />
-                        &nbsp; 반갑습니다 &nbsp; <br />
-                        방명록을<br />
-                        남겨주세요
+                        '{personalName}' 님의<br />
+                        &nbsp; 소중한 한마디 &nbsp; <br />
+                        부탁드립니다
                     </div>
                 </div>
                 <MovingDot />

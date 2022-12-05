@@ -8,12 +8,27 @@ import infoImg from 'asset/images/03방명록.png';
 import infoImgActive from 'asset/images/03방명록_select.png';
 import deliverHeartImg from 'asset/images/04마음전하시는곳.png';
 import deliverHeartImgActive from 'asset/images/04마음전하시는곳_select.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function MainMenu(props) {
     const [select, setSelect] = useState('None')
     const navigate = useNavigate()
+
+    useEffect(() => {
+        let timeout = setTimeout(() => {
+            if (select !== 'None') {
+                const mapping = {
+                    "wedding": "wedding-cards",
+                    "hall": "map",
+                    "info": "info",
+                    "deliver": "deliver-heart"
+                }
+                navigate(mapping[select])
+            }
+        }, 200)
+        return () => { clearTimeout(timeout) }
+    }, [select])
 
     return (
         <>
