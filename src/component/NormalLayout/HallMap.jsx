@@ -14,7 +14,7 @@ function HallMap(props) {
         return 520 > window.innerWidth ? window.innerWidth - 40 : 480
     }
     function maxHeight() {
-        return 520 > window.innerWidth ? window.innerWidth - 40 : 480
+        return 520 > window.innerWidth ? (window.innerWidth - 40) / 4 * 3 : 480 / 4 * 3
     }
 
     return (

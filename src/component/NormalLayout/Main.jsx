@@ -22,7 +22,7 @@ function Main() {
                 <MovingDot />
             </div>
             <div className="background-banner d-flex d-row align-items-top justify-content-center mb-3">
-                <img src={titleImg} alt="title" style={{ width: '60%' }} />
+                <img src={titleImg} alt="title" style={{ maxWidth: '60%' }} />
             </div>
             <div className="background-banner d-flex align-items-center flex-column">
                 <MainMenu />
