@@ -36,3 +36,13 @@ code {
     display: block;
   }
 }
+
+.page-link{
+  color:#df677c !important;
+}
+
+.page-item.active .page-link{
+  background-color: #df677c !important;
+  border-color:#df677c !important;
+  color: #fff !important;
+}

@@ -41,7 +41,7 @@ function GuestBook() {
     }
     return (
         <div>
-            <Button variant="primary" onClick={handleShow} className="" style={{ width: '100%' }}>
+            <Button onClick={handleShow} style={{ width: '100%', backgroundColor: '#df677c', borderColor: '#b66271', color: '#fff' }}>
                 글 쓰기
             </Button>
 
