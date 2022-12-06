@@ -102,7 +102,7 @@ function GuestBook() {
                         </Container>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" type="submit">
+                        <Button style={{ backgroundColor: "#df677c", borderColor: '#b66271' }} type="submit">
                             저장
                         </Button>
                         <Button variant="secondary" onClick={handleClose}>
