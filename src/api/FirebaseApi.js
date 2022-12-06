@@ -35,12 +35,9 @@ const functions = {
                 returnData.push(obj)
             }
         })
-        console.log(returnData)
         returnData.sort((a, b) => {
             return Object.values(b)[0]['date'] - Object.values(a)[0]['date']
         })
-        console.log(returnData)
-
         return returnData;
     },
     async addGuestBook(contents) {
@@ -54,7 +51,6 @@ const functions = {
     async deleteGuestBoock(hash) {
         try {
             const docRef = doc(db, "guestbook", hash);
-            console.log(hash, docRef)
             await updateDoc(docRef, { visiable: false })
             return true
         } catch (e) {
