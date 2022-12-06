@@ -30,7 +30,7 @@ function HallMap(props) {
                 <div id='myMap' style={{ width: maxWidth(), height: maxHeight() }}></div>
             </div>
             <Row className="d-flex flex-column align-content-center mt-3 mx-0">
-                <Col sm={4} className=" pt-3">
+                <Col className=" pt-3">
                     <div className="d-flex justify-content-center mb-2" style={{ fontSize: 30 }}>
                         <FaTaxi />
                     </div>
@@ -41,7 +41,7 @@ function HallMap(props) {
                                         차량번호 등록시 2시간 무료주차<br />
                     </p>
                 </Col>
-                <Col sm={4} className=" pt-3 ">
+                <Col className=" pt-3 ">
                     <div className="d-flex justify-content-center mb-2" style={{ fontSize: 30 }}>
                         <FaSubway />
                     </div>
@@ -50,7 +50,7 @@ function HallMap(props) {
                     </div>
                     <p className="d-flex justify-content-center">양재역 3번출구에서 도보 2분거리</p>
                 </Col>
-                <Col sm={4} className="pt-3">
+                <Col className="pt-3">
                     <div className="d-flex justify-content-center mb-2" style={{ fontSize: 30 }}>
                         <FaBus />
                     </div>
@@ -58,12 +58,12 @@ function HallMap(props) {
                         <h4>버스 안내</h4>
                     </div>
                     <Row className="d-flex justify-content-center">
-                        <Col xs={2} className="text-center"><b>간선</b></Col>
-                        <Col xs={8}>140, 400, 402, 407, 421,<br></br>  440, 441, 462, 470</Col>
+                        <Col style={{ maxWidth: 60 }} className="text-center"><b>간선</b></Col>
+                        <Col style={{ maxWidth: 230 }}>140, 400, 402, 407, 421,<br></br>  440, 441, 462, 470</Col>
                     </Row>
                     <Row className="d-flex justify-content-center">
-                        <Col xs={2} className="text-center"><b>직행</b></Col>
-                        <Col xs={8}>1005-1, 1550, 1570, <br></br>3002, 3007, 9700</Col>
+                        <Col style={{ maxWidth: 60 }} className="text-center"><b>직행</b></Col>
+                        <Col style={{ maxWidth: 230 }}>1005-1, 1550, 1570, <br></br>3002, 3007, 9700</Col>
                     </Row>
                 </Col>
             </Row>
