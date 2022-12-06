@@ -5,11 +5,20 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NormalLayout from 'component/NormalLayout';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { IoChevronBackSharp } from 'react-icons/io5'
+import { useEffect } from 'react';
 
 function App() {
+  const params = useParams();
+  const personalName = params.name
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (personalName.length > 10) {
+      navigate(-1)
+    }
+  }, [])
 
   return (
     <>
