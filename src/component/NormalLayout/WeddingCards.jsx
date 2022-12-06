@@ -3,14 +3,13 @@ import React from 'react'
 import FirebaseApi from '../../api/FirebaseApi';
 import { Carousel } from 'react-bootstrap'
 
+import { useOutletContext } from 'react-router-dom';
+
 // import MovingDot from './Main/MovingDot';
 
 function WeddingCards() {
-    const [cardItem, setCardItem] = React.useState([]);
-
-    // function maxWidth() {
-    //     return 520 > window.innerWidth ? window.innerWidth - 80 : 480
-    // }
+    const { images } = useOutletContext();
+    const [cardItem, setCardItem] = React.useState(images || []);
 
     React.useEffect(() => {
         async function dataPush() {
@@ -21,9 +20,10 @@ function WeddingCards() {
             }
             return data;
         }
-        dataPush().then(d => {
-            setCardItem(d);
-        });
+        if (cardItem.length === 0)
+            dataPush().then(d => {
+                setCardItem(d);
+            });
     }, [])
 
     return (
@@ -31,18 +31,16 @@ function WeddingCards() {
             <div className="d-flex align-items-top justify-content-center ">
                 <div style={{ width: 480 }}>
                     {
-                        cardItem.length > 0 ?
-                            <Carousel variant="dark">
-                                {cardItem.map(d =>
-                                    <Carousel.Item key={d}>
-                                        <img
-                                            className="d-block w-100"
-                                            src={d}
-                                            alt="First slide"
-                                        />
-                                    </Carousel.Item>)}
-                            </Carousel>
-                            : ""
+                        <Carousel variant="dark">
+                            {cardItem.map(d =>
+                                <Carousel.Item key={d}>
+                                    <img
+                                        className="d-block w-100"
+                                        src={d}
+                                        alt="First slide"
+                                    />
+                                </Carousel.Item>)}
+                        </Carousel>
                     }
                 </div>
             </div>
