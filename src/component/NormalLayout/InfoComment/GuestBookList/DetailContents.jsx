@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button, ListGroup, FormControl, InputGroup, Form } from 'react-bootstrap'
 import { BsFillTrashFill } from "react-icons/bs";
 import FirebaseApi from "api/FirebaseApi"
+import './DetailContents.css'
 
 function DetailContents({ item }) {
     const [show, setShow] = React.useState(false);
@@ -43,23 +44,27 @@ function DetailContents({ item }) {
         <>
             <ListGroup.Item
                 as="li"
-                className="d-flex justify-content-between align-items-start"
+                className="justify-content-between align-items-start"
                 onClick={handleShow}
             >
-                <div className="ms-2 me-auto" >
-                    <div className="fw-bold">{item[Object.keys(item)[0]].title}</div>
-                    {item[Object.keys(item)[0]].name}
+                <div className="ms-2 me-auto ">
+                    <div className="fw-bold custom-text-overflow">
+                        {item[Object.keys(item)[0]].contents}
+                    </div>
+                    <div className="text-truncate">
+                        {item[Object.keys(item)[0]].name}
+                    </div>
                 </div>
             </ListGroup.Item>
-            <Modal show={show} onHide={handleClose} size="lg">
-                <Modal.Header style={{ display: 'flex', alignContent: "justifyContent" }}>
-                    <Modal.Title>{item[Object.keys(item)[0]].title}</Modal.Title>
+            <Modal show={show} onHide={handleClose} size="lg" style={{ display: 'block', maxHeight: window.innerHeight - 16 }}>
+                <Modal.Header className="d-flex">
+                    <Modal.Title className="text-truncate" style={{ maxWidth: 280 }}>{item[Object.keys(item)[0]].title}</Modal.Title>
                     <BsFillTrashFill className="mr-5" style={{ cursor: 'pointer' }} variant="danger" onClick={() => { setDeleteShow(true) }}></BsFillTrashFill>
                 </Modal.Header>
-                <Modal.Body>{item[Object.keys(item)[0]].contents.split('\n').map(txt => <span>{txt}<br /></span>)}</Modal.Body>
+                <Modal.Body className="d-block" style={{ maxHeight: '30em', wordWrap: 'break-word', overflow: 'auto' }}>{item[Object.keys(item)[0]].contents.split('\n').map(txt => <span>{txt}<br /></span>)}</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        닫기
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -82,11 +87,11 @@ function DetailContents({ item }) {
                         </InputGroup>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" type="submit">
-                            Delete
+                        <Button style={{ backgroundColor: "#df677c", borderColor: '#b66271' }} type="submit">
+                            삭제
                         </Button>
                         <Button variant="secondary" onClick={() => { setDeleteShow(false); setPassword(''); }}>
-                            Close
+                            닫기
                         </Button>
                     </Modal.Footer>
                 </Form>

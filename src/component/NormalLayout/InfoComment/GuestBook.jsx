@@ -2,11 +2,15 @@ import React from 'react';
 import { Modal, Button, Row, Col, Container, Form } from 'react-bootstrap'
 
 import Firebase from 'api/FirebaseApi';
+import { useParams } from 'react-router-dom';
 
 function GuestBook() {
+    const navigate = useParams();
+    const personalName = navigate.name
+
     const [show, setShow] = React.useState(false);
     const [validated, setValidated] = React.useState(false);
-    const [name, setName] = React.useState('');
+    const [name, setName] = React.useState(personalName);
     const [password, setPassword] = React.useState('');
     const [title, setTitle] = React.useState('');
     const [contents, setContents] = React.useState('');
@@ -14,7 +18,7 @@ function GuestBook() {
     const handleClose = () => {
         setShow(false);
         setTitle('');
-        setName('');
+        // setName('');
         setPassword('');
         setContents('');
         setValidated(false);
@@ -41,7 +45,7 @@ function GuestBook() {
     }
     return (
         <div>
-            <Button variant="primary" onClick={handleShow} className="" style={{ width: '100%' }}>
+            <Button onClick={handleShow} style={{ width: '100%', backgroundColor: '#df677c', borderColor: '#b66271', color: '#fff' }}>
                 글 쓰기
             </Button>
 
@@ -81,6 +85,7 @@ function GuestBook() {
                                     <Form.Control
                                         type="input"
                                         required
+                                        readOnly
                                         onChange={(e) => { setName(e.target.value) }}
                                         value={name}
                                         placeholder="이름" />
